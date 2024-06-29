@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECNO</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+    <div class="container">
+        <article class="info card-one">
+            <div class="faucetList">
+
+                <!-- SET TIMER 1 -->
+                <header>
+                    <center>    
+                       <!--
+                        <h4 id="clickLeft">NEED TO REACH 1 DOLLAR -- <span></span></h4>    
+                       -->
+                        <!-- NUMBER OF EARN AND NUMBER OF CLICKS -->
+                        <h4 id="limit">PHASE 1<span id="points"></span><span id="getValue"></span></h4>
+                    </center>
+
+                    <div><span></span></div> 
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                </header>
+
+                <header>
+                    <center><h4>PHASE 2</h4></center>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                </header>
+
+                <header>
+                <center><h4>PHASE 3</h4></center>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div> 
+                    <div><span></span></div>    
+                    <div><span></span></div>
+                    <div><span></span></div> 
+                </header>
+                
+                <header>
+                    <center><h4>PHASE 4</h4></center>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                </header>
+
+                <header>
+                    <center><h4>PHASE 5</h4></center>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                </header>
+            </div>
+        </article>
+        
+        <article class="info card-two">
+            <div class="faucetList">
+                
+                <header>
+                    <center><h4>PHASE 6</h4></center>
+                    <div><span></span></div>
+                    <div><span></span></div> 
+                    <div><span></span></div>
+                </header>
+
+                <header>
+                    <center><h4>PHASE 7</h4></center>
+                    <div><span></span></div>
+                    <div><span></span></div>
+                    <div><span></span></div> 
+                    <div><span></span></div>
+                </header>
+
+                <header>
+                    <center><h4>PHASE 8</h4></center>
+                    <div><span></span></div>
+                </header>
+
+            </div>    
+        </article>
+        
+        <article class="info card-three">
+            
+
+            
+        </article>
+        
+        <article class="info card-four">
+
+            
+        </article>
+        <article class="info card-five">
+            
+        </article>
+    </div>
+
+    <script src="./script/functionJoy.js"></script>
+    <script src="./script/songs.js"></script>
+    <script>
+
+        let titleCrypto = ['COINPAYU', 'ADBTC TOP', 'ADSPACE', 'VIE FAUCET', 'COINTIPLY', 'LARVEL', 'CRYPTO FLARE',
+                           'BITHUB', 'COINPAYZ', 'FREE BNB', 'EARNBITMOON', 'BIGPAY', 'BAN FAUCET', 'CLAIMBITS',
+                           'QASHBITS', 'FEYORRA', 'PINOYFAUCET', 'FAUCETSFLY', 'COINADSTER', 'FREESOLANA', 'F-CRYPTO',
+                           'DUTCHY', 'SIMPLE BITS', 'GRAB TC', 'FREE BTC', 'FREE LITE', 'FREE ETH', 'FREE DOGE',
+                           'YANNIK', 'BTC TRICKS', 'RUSH BTC'];
+
+        let compute = document.getElementById('compute');
+
+        
+        let points = document.getElementById('points');
+        let lists = document.querySelectorAll('a');
+        let text = document.getElementById('getValue');
+        let displayEarn = document.getElementById('displayEarn');
+        let limit = document.getElementById('limit');
+        let clickLeft = document.getElementById('clickLeft');
+
+        let countPoints = 0;
+        let count = 0;
+        let countLimit = 0;
+        //let earnPerHour = 0;
+        let numberOfClick = 498;
+        let onlyFiveClicks = 0;
+
+        let arrCountPlatform = [];
+        
+        limit.onclick = function(){
+            countLimit = 0;
+            points.textContent = `${countPoints} ==> ${countLimit}`;
+        }
+        
+        // List of a Faucets [Label Name, Minutes, Link, Earn, Attribute id of Input Text, Index]
+        let faucetObj = {
+            //faucet1: ['', , '', , 'countdown1', 0],
+            //faucet2: ['', , '', , 'countdown2', 1],
+            
+            // 1
+            faucet1: ['BCHADS PTC', 1, 'https://bchads.io/ptc', 0.31, 'countdown1', 0],
+            faucet2: ['BCHADS MAD', 2, 'https://bchads.io/madfaucet', 0.39, 'countdown2', 1],
+            faucet3: ['PTC4BTC FAUCET', 5, 'https://ptc4btc.com/faucet', 0.33, 'countdown3', 2],
+            faucet4: ['BCHADS FAUCET', 10, 'https://bchads.io/faucet', 0.63, 'countdown4', 3]
+            
+            // // 2
+            // faucet5: ['COINTIPLY', 60, 'http://www.cointiply.com/home?intent=faucet', 6, 'countdown5', 4],
+            // faucet6: ['FREEBITCOIN', 60, 'https://freebitco.in/', 1, 'countdown6', 5],
+            // faucet7: ['BITCOIN TRICKS', 60, 'https://bitcointricks.com/?page=faucet', 1, 'countdown7', 6],
+            
+            // // 3
+            // faucet8: ['COINPAYZ', 5, 'https://coinpayz.xyz/faucet', 1.19, 'countdown8', 7],
+            // faucet9: ['EARNBITMOON', 5, 'https://earnbitmoon.club/', 1, 'countdown9', 8],
+            // faucet10: ['CLAIMBITS', 5, 'https://claimbits.net/faucet.html', 0.5, 'countdown10', 9],
+            // faucet11: ['QASHBITS', 5, 'https://qashbits.com/', 0.57, 'countdown11', 10],
+            // faucet12: ['PINOY FAUCET', 5, 'https://pinoyfaucet.com/dashboard', 1, 'countdown12', 11],
+            // faucet13: ['BITHUB', 5, 'https://bithub.win/faucet', 1, 'countdown13', 12],
+            // faucet14: ['FREE BNB', 5, 'https://www.freebnbcoin.com/faucet', 1.1, 'countdown14', 13],
+            
+            // // 4
+            // faucet15: ['CRYPTO FLARE', 15, 'https://cryptoflare.net/claim', 2, 'countdown15', 14],
+
+            // // 5
+            // faucet16: ['LARVEL FAUCET', 30, 'https://larvelfaucet.com/faucet', 1, 'countdown16', 15],
+            // faucet17: ['DUTCHY CORP 1', 30, 'https://autofaucet.dutchycorp.space/roll.php', 1, 'countdown17', 16],
+            // faucet18: ['RUSHBITCOIN', 30, 'https://rushbitcoin.com/', 0.82, 'countdown18', 17],
+            // faucet19: ['FAUCET CRYPTO', 30, 'https://faucetcrypto.com/dashboard', 1, 'countdown19', 18],
+            // faucet20: ['DUTCHY CORP 2', 30, 'https://autofaucet.dutchycorp.space/coin_roll.php', 1, 'countdown20', 19],
+            
+            // // 6
+            // faucet21: ['COINADSTER', 8, 'https://coinadster.com/faucet.html', 1, 'countdown21', 20],
+            // faucet22: ['FREESOLANA', 10, 'https://freesolana.top/faucet', 1, 'countdown22', 21],
+            // faucet23: ['FAUCETS FLY', 10, 'https://faucetsfly.com/roll.html', 1, 'countdown23', 22],
+            
+            // // 7
+            // faucet24: ['FREE LITECOIN', 60, 'https://www.free-litecoin.com/', 1.5, 'countdown24', 23],
+            // faucet25: ['FREE ETHEREUM', 60, 'https://www.free-ethereum.io/free/', 1.7, 'countdown25', 24],
+            // faucet26: ['FREE DOGECOIN', 60, 'https://www.free-doge.io/free/', 1.9, 'countdown26', 25],
+            // faucet27: ['YANNIK', 60, 'https://yannik.biz/index.php', 1, 'countdown27', 26],
+            
+            // // 4 HOURS, 8 HOURS
+            // faucet28: ['LARVEL GAME', 480, 'https://larvelfaucet.com/game', 3.39, 'countdown28', 27]
+        }
+
+        let colorsArr = ['yellow', 'aqua', 'pink', 'greenyellow', 'orange', 'darksalmon', 'blanchedalmond', 'cadetblue'];
+        let colorArr = [];
+
+        for(let a = 0; a <= 10; a++){
+            for(let color of colorsArr){
+                colorArr.push(color);
+            }
+        }
+
+        let faucets = document.querySelectorAll('.faucetList div');
+        let platforms = Object.entries(faucetObj);
+        let Timer = '';
+        let x = 0;
+
+        for(const [key, value] of platforms){
+            let button = document.createElement('button'); // Creating an Element
+            let input = document.createElement('input'); // Creating an Element
+
+            faucets[x].classList.add('faucet'); // Add Class in a Faucet
+            faucets[x].lastElementChild.textContent = value[0]; // Label Name of Faucet
+            faucets[x].lastElementChild.style.backgroundColor = colorArr[x]; // Label BackGround Color of Faucet
+            
+            faucets[x].lastElementChild.classList.add('setFaucetProperties'); // Add Class
+            button.classList.add('buttonProperties'); // Add Class
+
+            faucets[x].append(button); // Adding Element in a Div Faucet Class
+            faucets[x].append(input); // Adding Element Div Faucet Class
+
+            input.type = "text"; // Set Input to Text
+            input.setAttribute("id", `countdown${x+1}`); // Set ID of Input Text 
+
+            Timer = String(value[1]); // Convert value type into String
+            Timer = Timer.length == 1 ? `0${value[1]}` : value[1]; // Asking Whether a Length of a Number String is 1 or 2
+            faucets[x].lastElementChild.value = `${Timer}:00`; // Set Timer Value of an Input Text
+
+            x++;
+            button.textContent = `SET TIMER ${x}`; // Set Text of a Button (SET TIMER 01)
+        }
+
+        let buttons = document.querySelectorAll('button');
+        let inputs = document.getElementsByTagName('input');
+        let obj = Object.entries(faucetObj);
+
+        let headers = document.querySelectorAll('.faucetList header');
+        let colorWhite = document.getElementsByTagName('h4');
+
+        function colorTomato(index){
+            for(let x = 0; x <= headers.length - 1; x++){
+                if(index == x){
+                    headers[x].classList.add('changeColor');
+                    colorWhite[x].classList.add('colorWhite');
+                } else {
+                    headers[x].classList.remove('changeColor');
+                    colorWhite[x].classList.remove('colorWhite');
+                }
+            }
+        }   
+
+        for(let x = 0; x <= 7; x++){
+            headers[x].onclick = function(){
+                colorTomato(x);
+            }
+        }
+
+        for(let [key, value] of obj){
+            buttons[value[5]].onclick = function(){
+                buttons[value[5]].disabled = true;
+                text.textContent = '  --->   ' + value[0];
+                text.style.color = 'blue';
+
+                switch(value[0]){                    
+                    case 'BAN FAUCET':
+                        pauseMusic(burning);
+                        numberOfClick--;
+                        //clickLeft.lastElementChild.textContent = `${numberOfClick} Click Left`; 
+                        //clickLeft.lastElementChild.style.color = 'blue';
+                        onlyFiveClicks = 0;
+                        break;
+                    case 'COINTIPLY':
+                        //pauseMusic(gohan);
+                        break;
+                    case 'LARVEL FAUCET':
+                        //pauseMusic(wedd);
+                        break;
+                    case 'MINING':
+                        //pauseMusic(saliva);
+                        break;
+                    case 'LARVEL GAME':
+                        pauseMusic(pod);
+                        break;
+                    case 'CRYPTO FLARE':
+                        //pauseMusic(wedd);
+                        break;
+                }
+
+                if(onlyFiveClicks == 9999){
+                    alert('Please Click BAN FAUCET');
+                    buttons[value[5]].disabled = false;
+                    return
+                } else {
+                    onlyFiveClicks++;
+                }
+    
+                setTimer(value[1], value[2], value[3], value[4], buttons[value[5]]);
+                points.textContent = `${countPoints} ==> ${countLimit}`; 
+            };
+        }
+        
+        for(let list of lists){
+            list.addEventListener('click', function(){
+                list.style.backgroundColor = 'greenyellow';
+            });
+        }        
+    </script>
+</body>
+</html>

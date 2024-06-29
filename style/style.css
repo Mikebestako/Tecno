@@ -1,0 +1,194 @@
+.container {
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    gap: 10px;
+}
+
+.card-one {
+    background-color:thistle;
+}
+
+.card-two {
+    background-color:burlywood;
+}
+
+.card-three {
+    background-color:wheat;
+}
+
+.card-four {
+    background-color:lightgreen;
+}
+
+.info {
+    border-radius: 15px;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+h4, li {
+    font-weight: bold;
+    color: red;
+} 
+
+.faucet, .crypto {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    padding-bottom: 2px;
+}
+
+.faucet > * {
+    width: 190px;
+}
+
+.crypto > * {
+    width: 103px;
+}
+
+
+.faucetList, #compute {
+    display: inline-flex;
+    flex-direction: column; 
+}
+
+.buttonProperties {
+    height: 21px;
+    width: 110px;
+}
+
+.setFaucetProperties {
+    height: 18px;
+    border: 1px solid black;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.others {
+    display: flex;
+}
+
+.info {
+    padding: 10px;
+    border: 3px solid black;
+}
+
+#col1 {
+    background-color:darksalmon;
+}
+
+#col2 {
+    background-color: pink;
+}
+
+#col3 {
+    background-color:cyan;
+}
+
+.others div {
+    margin: 5px;
+    width: auto;
+    padding-right: 15px;
+    border-radius: 15px; 
+    border: 1px solid black;   
+}
+
+#points {
+    padding-left: 10px;
+}
+
+
+
+/*
+h4 {
+    color: white;
+}
+
+article, div {
+    background-color:cornflowerblue;
+}
+
+input {
+    background-color:darkgray;
+}
+
+button {
+    background-color:darkolivegreen;
+}
+
+#col1, #col2, #col3, .info {
+    background-color:darkolivegreen;
+}
+
+a {
+    color:blue;
+}
+
+.card-four {
+    width: 210px;
+}
+
+h4 {
+    font-size: 12px;
+}
+*/
+
+/*=====================================================
+    COMMENT IF YOUR ARE NOT USING PLATFORM
+  =====================================================
+*/
+
+/*
+article, div {
+    background-color:grey;
+}
+
+input {
+    background-color:darkgray;
+}
+
+button {
+    background-color:cadetblue;
+}
+
+#col1, #col2, #col3, .info {
+    background-color:darkolivegreen;
+}
+
+li, h4 {
+    color:black;
+}
+
+a {
+    color:darkblue;
+}
+*/
+
+/**/    
+
+/*=====================================================
+    DO NOT COMMENT
+  =====================================================
+*/
+
+/*
+.changeColor {
+    background-color: tomato;
+    outline: 0.4rem solid black;
+    outline-offset: -3px;
+}
+
+.colorWhite {
+    color: white;
+}
+*/
+
+
+/*
+GG Nics
+*/
+
+
